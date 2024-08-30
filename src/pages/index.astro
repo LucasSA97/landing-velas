@@ -1,12 +1,15 @@
 ---
 import IconComponent from '../components/IconComponent';
-import '../styles/global.css';
+// import '../styles/global.css';
 import FeatureCard from '../components/FeatureCard.astro';
 import NavLink from '../components/NavLink.astro';
 import SocialIcon from '../components/SocialIcon.astro';
 import { ShoppingBagIcon, FireIcon, SparklesIcon, TruckIcon } from '@heroicons/react/outline';
 
 ---
+<head >
+  <meta charset="UTF-8" />
+</head>
 
 <div class="bg-[#f5f5dc] min-h-screen flex flex-col">
   <!-- Navbar -->
@@ -57,7 +60,7 @@ import { ShoppingBagIcon, FireIcon, SparklesIcon, TruckIcon } from '@heroicons/r
     </section>
 
     <!-- Features Section -->
-    <section class="bg-[#e6e6c7] py-16">
+    <!-- <section class="bg-[#e6e6c7] py-16">
       <div class="container mx-auto">
         <h3 class="text-3xl font-semibold text-[#8B4513] text-center mb-12">Por qué elegir nuestras velas</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -80,7 +83,7 @@ import { ShoppingBagIcon, FireIcon, SparklesIcon, TruckIcon } from '@heroicons/r
           />
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Contact Section -->
     <section id="contacto" class="bg-[#f5f5dc] py-16">
