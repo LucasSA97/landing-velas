@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/strict",
+    "compilerOptions": {
+      "noImplicitAny": false,
+      "baseUrl": ".",
+      "paths": {
+        "@heroicons/react/outline": ["node_modules/@heroicons/react/outline/index.js"]
+      },
+    }
+}

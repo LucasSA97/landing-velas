@@ -1,0 +1,151 @@
+---
+import IconComponent from '../components/IconComponent';
+import '../styles/global.css';
+import FeatureCard from '../components/FeatureCard.astro';
+import NavLink from '../components/NavLink.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+import { ShoppingBagIcon, FireIcon, SparklesIcon, TruckIcon } from '@heroicons/react/outline';
+
+---
+
+<div class="bg-[#f5f5dc] min-h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-[#e6e6c7] p-4 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-semibold text-[#8B4513]">Velas Aromáticas</h1>
+      <div class="flex space-x-4">
+        <NavLink href="#" text="Inicio" />
+        <NavLink href="#" text="Productos" />
+        <NavLink href="#contacto" text="Contacto" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="container mx-auto py-20 text-center">
+      <h2 class="text-4xl font-bold text-[#8B4513] mb-4">Ilumina tu espacio con nuestras velas artesanales</h2>
+      <p class="text-xl text-[#A0522D] mb-8">Descubre la magia de nuestras velas aromáticas hechas a mano</p>
+      <button class="bg-[#DEB887] text-white py-2 px-6 rounded-full hover:bg-[#D2B48C] transition duration-300">
+        Explorar Colección
+      </button>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="container mx-auto py-16">
+      <h3 class="text-3xl font-semibold text-[#8B4513] text-center mb-12">Nuestras Velas</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {Array.from({ length: 3 }).map((_, pair) => (
+          <div class="flex flex-col sm:flex-row gap-8">
+            {Array.from({ length: 2 }).map((_, offset) => (
+              <div class="flex-1 bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                <img
+                  src={`/placeholder.svg?height=300&width=400`}
+                  alt={`Vela ${pair * 2 - offset + 1}`}
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="text-xl font-semibold text-[#8B4513] mb-2">Vela Aromática {pair * 2 - offset + 1}</h4>
+                  <p class="text-[#A0522D]">Una vela con aroma suave y relajante.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-[#e6e6c7] py-16">
+      <div class="container mx-auto">
+        <h3 class="text-3xl font-semibold text-[#8B4513] text-center mb-12">Por qué elegir nuestras velas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <FeatureCard
+		  icon={<FireIcon class="w-10 h-10 text-[#DEB887]" />}
+            title="100% Naturales"
+            description="Hechas con cera de soja y aceites esenciales"
+          />
+          <FeatureCard
+            title="Larga Duración"
+            description="Disfruta de hasta 50 horas de aroma"
+          />
+          <FeatureCard
+            title="Aromas Únicos"
+            description="Fragancias exclusivas creadas por expertos"
+          />
+          <FeatureCard
+            title="Envío Gratis"
+            description="En pedidos superiores a $50"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="bg-[#f5f5dc] py-16">
+      <div class="container mx-auto px-4">
+        <div class="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-[#8B4513] text-center mb-6">¡Ponte en Contacto Conmigo!</h2>
+          <p class="text-[#A0522D] text-center mb-8">
+            Estoy disponible para ayudarte con cualquier duda o para comenzar tu pedido personalizado.
+          </p>
+          <div class="space-y-6">
+            <div class="flex items-center justify-center space-x-4">
+              <!-- <IconComponent name="Phone" /> -->
+              <span class="text-[#A0522D]">687 854 801</span>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+              <!-- <IconComponent name="Mail" /> -->
+              <a href="mailto:info@velasaromaticas.com" class="text-[#A0522D] hover:underline">
+                info@velasaromaticas.com
+              </a>
+            </div>
+            <div class="flex justify-center">
+              <a
+                href="https://wa.me/34687854801"
+                class="bg-[#25D366] text-white py-2 px-6 rounded-full hover:bg-[#128C7E] transition duration-300 flex items-center space-x-2"
+              >
+                <!-- <IconComponent name="MessageCircle" /> -->
+                <span>Contáctame por WhatsApp</span>
+              </a>
+            </div>
+            <div class="flex justify-center space-x-4">
+              <!-- <SocialIcon href="#" icon={<IconComponent name="Facebook" />} />
+              <SocialIcon href="#" icon={<IconComponent name="Instagram" />} />
+              <SocialIcon href="#" icon={<IconComponent name="Twitter" />} />
+              <SocialIcon href="#" icon={<IconComponent name="Linkedin" />} /> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#e6e6c7] py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-between items-center">
+        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+          <h4 class="text-xl font-semibold text-[#8B4513] mb-4">Velas Aromáticas</h4>
+          <p class="text-[#A0522D]">Iluminando tu vida con aromas naturales desde 2023.</p>
+        </div>
+        <div class="w-full md:w-1/3 mb-6 md:mb-0">
+          <h5 class="text-lg font-semibold text-[#8B4513] mb-4">Contacto</h5>
+          <p class="text-[#A0522D]">Email: info@velasaromaticas.com</p>
+          <p class="text-[#A0522D]">Teléfono: (123) 456-7890</p>
+        </div>
+        <div class="w-full md:w-1/3">
+          <h5 class="text-lg font-semibold text-[#8B4513] mb-4">Síguenos</h5>
+          <div class="flex space-x-4">
+            <!-- <SocialIcon href="#" icon={<IconComponent name="Instagram" />} /> -->
+            <!-- <SocialIcon href="#" icon={<IconComponent name="Linkedin" />} /> -->
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 text-center text-[#A0522D]">
+        <p>&copy; 2023 Velas Aromáticas. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</div>
