@@ -48,7 +48,7 @@ import { useState } from "react";
   // Función para mostrar más velas
   const showMoreCandles = () => {
     console.log('Botón clickeado');
-    setVisibleCandles(visibleCandles + 3);
+    setVisibleCandles(visibleCandles => visibleCandles + 3);
   };
 
   return (

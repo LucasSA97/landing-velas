@@ -1,0 +1,44 @@
+---
+import CandlesCard from "src/components/CandlesCard.astro";
+import Layout from "src/layouts/Layout.astro";
+import NavLink from 'src/components/NavLink.astro';
+
+
+
+---
+
+<Layout  title="Nuestras Velas">
+    <!-- Product Grid -->
+    <NavLink />
+    <section class="container mx-auto py-16">
+        
+     <h3 class="text-3xl font-semibold text-[#8B4513] text-center mb-12">Nuestras Velas</h3>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+       <CandlesCard
+         imgSrc="/placeholder.svg?height=300&width=400"
+         altText="Vela 1"
+         title="Vela Aromática 1"
+         description="Una vela con aroma suave y relajante."
+       />
+       <CandlesCard
+         imgSrc="/placeholder.svg?height=300&width=400"
+         altText="Vela 2"
+         title="Vela Aromática 2"
+         description="Una vela con aroma floral."
+       />
+       <CandlesCard
+         imgSrc="/placeholder.svg?height=300&width=400"
+         altText="Vela 3"
+         title="Vela Aromática 3"
+         description="Una vela con aroma cítrico."
+       />
+       <CandlesCard
+         imgSrc="/placeholder.svg?height=300&width=400"
+         altText="Vela 4"
+         title="Vela Aromática 4"
+         description="Una vela con aroma a vainilla."
+       />
+     </div>
+   </section>
+   
+</Layout>

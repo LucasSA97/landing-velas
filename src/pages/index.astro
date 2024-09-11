@@ -2,8 +2,8 @@
 import IconComponent from 'src/components/IconComponent';
 import FeatureCard from '../components/FeatureCard.astro';
 import NavLink from '../components/NavLink.astro';
-import Candles from '../components/Candles'
 import CandlesCard from 'src/components/CandlesCard.astro';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 
 
 
@@ -38,13 +38,60 @@ const map = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
 </svg>`
 
 
-
-
-
 ---
 <head >
   <meta charset="UTF-8" />
+  <script>
+    const candles = [
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 1",
+        title: "Vela Aromática 1",
+        description: "Una vela con aroma suave y relajante.",
+      },
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 2",
+        title: "Vela Aromática 2",
+        description: "Una vela con aroma floral.",
+      },
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 3",
+        title: "Vela Aromática 3",
+        description: "Una vela con aroma cítrico.",
+      },
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 4",
+        title: "Vela Aromática 4",
+        description: "Una vela con aroma a vainilla.",
+      },
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 5",
+        title: "Vela Aromática 5",
+        description: "Una vela con aroma a sándalo.",
+      },
+      {
+        imgSrc: "/placeholder.svg?height=300&width=400",
+        altText: "Vela 6",
+        title: "Vela Aromática 6",
+        description: "Una vela con aroma a lavanda.",
+      },
+    ];
   
+    // Estado inicial - cuántas velas mostrar
+    let visibleCandles = 3;
+  
+    // Función para cargar más velas
+    function showMoreCandles() {
+      visibleCandles += 3; // Mostrar 3 más
+    }
+  </script>
+
+<ViewTransitions />
+
 </head>
 
 <div class="bg-[#f5f5dc] min-h-screen flex flex-col">
@@ -54,7 +101,7 @@ const map = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
       <h1 class="text-2xl font-semibold text-[#8B4513]">Art&San</h1>
       <div class="flex space-x-4">
         <NavLink href="#" text="Inicio" />
-        <NavLink href="#" text="Productos" />
+        <NavLink href="products" text="Productos" />
         <NavLink href="#contacto" text="Contacto" />
       </div>
     </div>
@@ -70,15 +117,9 @@ const map = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24
         Explorar Colección
       </button>
     </section>
-
-    <!-- Product Grid -->
-    <!-- <section class="container mx-auto py-16">
-      <h3 class="text-3xl font-semibold text-[#8B4513] text-center mb-12">Nuestras Velas</h3>
-     
-    </section> -->
-
-    <Candles />
     
+
+ 
 
     <!-- Features Section -->
     <section class="bg-[#e6e6c7] py-16">
